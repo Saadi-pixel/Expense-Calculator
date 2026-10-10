@@ -1,60 +1,37 @@
-# DAILY AND MONTHLY EXPENSE CALCULATOR
-#### Video Demo: https://youtu.be/YOUR_VIDEO_ID_HERE
+# 📊 Daily & Monthly Expense Calculator
 
-#### Description:
-Welcome to the **Daily and Monthly Expense Calculator**, a robust and user-friendly command-line application built in Python for Harvard’s CS50p final project. 
+> *A lightweight, command-line expense tracking application built with Python for CS50P.*
 
-Managing personal finances is a crucial everyday task, yet many people struggle to keep clear records without complex software. This project provides a lightweight, terminal-based solution that allows users to seamlessly log, review, search, and analyze their daily expenditures. Data persistence is handled via a local CSV file (`expenses.csv`), and output data is formatted cleanly using the `tabulate` library for an enhanced user interface.
-
----
-
-### Project Structure & Design Architecture
-
-The project is split into modular components to ensure separation of concerns, testability, and clean code practices:
-
-1. **`project.py` (Core Application):**
-   - **`main()`:** Serves as the primary control loop, presenting a clear numerical menu system (1 through 6) with input validation.
-   - **`add_expense()`:** Prompts the user for category, item name, date, and amount. It features robust input error handling to ensure monetary values are successfully captured as integers before appending the entry safely to the CSV file.
-   - **`show_expenses()`:** Reads all recorded entries from the database and renders them in a styled tabular grid (`fancy_grid`) using `tabulate`.
-   - **`search_expense()`:** Allows users to query specific spending categories, filtering matching records and displaying them dynamically.
-   - **`calculate_total()`:** Computes and outputs the cumulative lifetime spending across all recorded items.
-   - **`calculate_categorywise_spendings()`:** Aggregates and reports total expenditures for a user-specified category.
-
-2. **`test_project.py` (Automated Testing Suite):**
-   - Written for `pytest`, this file validates core application logic without altering production data. It uses `capsys` to verify terminal output and `monkeypatch` to simulate user inputs, ensuring high test coverage for functions like `calculate_total`, `calculate_categorywise_spendings`, and `search_expense`.
-
-3. **`expenses.csv` (Data Storage):**
-   - Automatically created upon the first successful expense entry, serving as a persistent lightweight flat-file database.
+![Python 3.13+](https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![CSV Database](https://img.shields.io/badge/Storage-CSV-green?style=for-the-badge&logo=datacamp&logoColor=white)
+![Pytest Tested](https://img.shields.io/badge/Tested%20With-Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ---
 
-### Getting Started & Installation
+## ⚡ Overview
 
-To run this project locally on your machine, follow these simple steps:
-
-1. Clone or download the project files into a single directory.
-2. Install the required dependencies using pip:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the application:
-   ```bash
-   python project.py
-   ```
+The **Daily & Monthly Expense Calculator** is an intuitive CLI tool designed to streamline personal financial management. It allows users to log expenses, aggregate daily and monthly totals, search transaction logs, and format outputs cleanly using structured tables.
 
 ---
 
-### Running the Tests
+## ✨ Key Features
 
-To execute the automated test suite using `pytest`, run the following command in your terminal:
-```bash
-pytest test_project.py
-```
+* 📝 **Log Transactions:** Quickly record expense category, description, date, and cost.
+* 📈 **Instant Aggregations:** Calculate total spending broken down by day or month.
+* 🔍 **Search & Filter:** Query logged expenses using custom search parameters.
+* 📊 **Formatted Tables:** Renders clean ASCII tables powered by `tabulate`.
+* 💾 **Persistent Storage:** Stores all financial entries securely in a local `expenses.csv` file.
+* 🧪 **Automated Testing:** Fully verified via unit tests in `test_project.py` using `pytest`.
 
 ---
 
-### Design Choices & Challenges
+## 📁 Project Architecture
 
-- **Why CSV?** A comma-separated values file was chosen for its simplicity, speed, and lack of heavy database dependencies, making the tool instantly portable.
-- **Error Handling:** Extensive use of `try-except` blocks for `FileNotFoundError` ensures that users attempting to run reports before creating any expenses receive a friendly message instead of a program crash.
-- **User Experience:** Incorporating the `tabulate` package transforms raw data into a clean, easy-to-read financial dashboard right inside the command line.
+```text
+├── project.py         # Main application source code & core CLI functions
+├── test_project.py    # Pytest suit verifying project functions
+├── requirements.txt   # Third-party dependencies (tabulate, pytest)
+├── .gitignore         # Git tracking exclusion list
+├── LICENSE            # MIT Open-Source License
+└── README.md          # Project documentation
