@@ -25,7 +25,7 @@ The **Daily & Monthly Expense Calculator** is an intuitive CLI tool designed to 
 * 🧪 **Automated Testing:** Fully verified via unit tests in `test_project.py` using `pytest`.
 
 ---
-
+YouTube video link for live demo:https://youtu.be/lUiuT-vlF-Y?si=yqa7-b6CESg8VPK0
 ## 📁 Project Architecture
 
 ```text
